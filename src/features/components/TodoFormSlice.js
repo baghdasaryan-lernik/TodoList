@@ -27,7 +27,7 @@ export const todoFormSlice = createSlice({
   reducers: {
     todoAdd:(state, action) => {
     
-      state.push(action.payload)
+      state.unshift(action.payload)
     
     
     },
