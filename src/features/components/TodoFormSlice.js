@@ -30,13 +30,27 @@ export const todoFormSlice = createSlice({
       state.push(action.payload)
     
     
-    }
+    },
+    deleteTodo:(state, action) => {
+      return state.filter(todo => {
+       if(todo.id != action.payload) return todo
+      })
+   },
+   checkedTodo:(state, action) => {
+       state.map(todo => {
+       if(todo.id == action.payload.todoId){
+         todo.isCompleted = action.payload.isCompleted
+         return todo
+       } 
+       return todo
+      })
+   },
   }
 
   
 });
 
-export const { todoAdd } = todoFormSlice.actions;
+export const { todoAdd, deleteTodo, checkedTodo } = todoFormSlice.actions;
 
 export const selectTodos = (state) => state.todoForm;
 

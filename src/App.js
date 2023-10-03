@@ -8,7 +8,8 @@ function App() {
   return (
     <div className="container">
       <div className='combine'>
-       
+        <TodoAdd/>
+        <TodoList/>
       </div>
     </div>
   );
