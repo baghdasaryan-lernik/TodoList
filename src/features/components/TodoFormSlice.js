@@ -45,12 +45,17 @@ export const todoFormSlice = createSlice({
        return todo
       })
    },
+   clearCompleted:(state) => {
+         return state.filter(todo => {
+      return !todo.isCompleted
+  })
+    }
   }
 
   
 });
 
-export const { todoAdd, deleteTodo, checkedTodo } = todoFormSlice.actions;
+export const { todoAdd, deleteTodo, checkedTodo, clearCompleted} = todoFormSlice.actions;
 
 export const selectTodos = (state) => state.todoForm;
 

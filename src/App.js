@@ -10,6 +10,7 @@ function App() {
       <div className='combine'>
         <TodoAdd/>
         <TodoList/>
+        <TodoCompleted/>
       </div>
     </div>
   );
