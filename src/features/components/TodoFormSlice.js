@@ -25,13 +25,18 @@ export const todoFormSlice = createSlice({
   name: 'todoForm',
   initialState,
   reducers: {
-  
+    todoAdd:(state, action) => {
+    
+      state.push(action.payload)
+    
+    
+    }
   }
 
   
 });
 
-export const { } = todoFormSlice.actions;
+export const { todoAdd } = todoFormSlice.actions;
 
 export const selectTodos = (state) => state.todoForm;
 
