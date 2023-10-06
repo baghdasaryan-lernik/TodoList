@@ -1,9 +1,11 @@
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {todoAdd} from './TodoFormSlice';
+import {todoAdd} from '../slice/TodoFormSlice';
 
 
-export default function TodoAdd() {
+
+
+ const TodoAddComponent = () => {
  
  const [textTodo, setTextTodo] = useState("")
  const dispatch = useDispatch();
@@ -20,11 +22,13 @@ export default function TodoAdd() {
  }
 
   return (
-    <div className='todoAdd'>
+    <div className="todo-add">
       <form action="" onSubmit={handleSubmit} >
-        <input type="text" name='todo' placeholder='Add your todo...' value={textTodo} onChange={handleChange}/>
-        <button>+</button>
+        <input type="text" name="todo" placeholder=" Add your todo..." value={textTodo} onChange={handleChange}/>
+        <button>Add</button>
       </form> 
     </div>
   );
 }
+
+export default TodoAddComponent

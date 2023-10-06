@@ -1,16 +1,15 @@
 import React from 'react';
-import TodoAdd from './features/components/TodoAdd';
-import TodoList from './features/components/TodoList';
-import TodoCompleted from './features/components/TodoCompleted';
-import './App.css';
+import {TodoAddComponent, TodoListComponent, TodoCompletedComponent} from './features/home/home';
+import "./features/styles/App.scss"
 
-function App() {
+
+const App = () => {
   return (
     <div className="container">
       <div className='combine'>
-        <TodoAdd/>
-        <TodoList/>
-        <TodoCompleted/>
+        <TodoAddComponent/>
+        <TodoListComponent/>
+        <TodoCompletedComponent/>
       </div>
     </div>
   );

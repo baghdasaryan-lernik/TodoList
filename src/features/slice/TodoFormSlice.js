@@ -1,37 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-
- const initialState = [
-  {
-   id:Math.random(),
-   text:"Learn JS",
-   isCompleted:false
-  },
-  {
-    id:Math.random(),
-    text:"Learn CSS",
-    isCompleted:false
-   },
-   {
-    id:Math.random(),
-    text:"Learn HTML",
-    isCompleted:false
-   }
-]
-
-
+import { initialState } from '../initial_state/initialState';
 
 export const todoFormSlice = createSlice({
   name: 'todoForm',
   initialState,
   reducers: {
     todoAdd:(state, action) => {
-    
       state.unshift(action.payload)
-    
-    
     },
-    deleteTodo:(state, action) => {
+  deleteTodo:(state, action) => {
       return state.filter(todo => {
        if(todo.id != action.payload) return todo
       })
@@ -55,7 +32,7 @@ export const todoFormSlice = createSlice({
   
 });
 
-export const { todoAdd, deleteTodo, checkedTodo, clearCompleted} = todoFormSlice.actions;
+export const {todoAdd, deleteTodo, checkedTodo, clearCompleted} = todoFormSlice.actions;
 
 export const selectTodos = (state) => state.todoForm;
 
